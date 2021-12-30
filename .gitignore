@@ -9,3 +9,11 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+
+# IDE preference files
+.vs
+.vscode
+.idea
+
+# Remove the build directory
+build
