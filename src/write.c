@@ -1,3 +1,5 @@
+#include <myfsconfig.h>
+
 #include <myfsapi.h>
 
 size_t mywrite(MYFILE_HANDLE file, void* buffer, size_t size, size_t count)

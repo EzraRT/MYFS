@@ -4,6 +4,10 @@
 
 int main(int argc, char const* argv[])
 {
+    uid = 0;
+    gid = 0;
+
+    mychdir("fmlnb");
     MYFILE_HANDLE file = myopen("test.txt", "r");
     if (file == NULL) {
         printf("open failed\n");
@@ -12,13 +16,13 @@ int main(int argc, char const* argv[])
 
     char buffer[1024];
     memset(buffer, 0, sizeof(buffer));
-    size_t read_size = myread(file, buffer, 1024, sizeof(char));
+    size_t read_size = myread(file, buffer, sizeof(char), 1024);
     printf("read_size: %llu\n", read_size);
     printf("buffer:\n%s\n", buffer);
 
     myclose(file);
 
-    MYFILE_HANDLE file2write = myopen("output.txt", "w");
+    MYFILE_HANDLE file2write = myopen("testoutput.txt", "w");
     if (file2write == NULL) {
         printf("open failed\n");
         return -1;
@@ -33,5 +37,18 @@ int main(int argc, char const* argv[])
     write_size = mywrite(file2write, buffer, sizeof(char), strlen(buffer));
 
     myclose(file2write);
+
+    // mychdir("fmlnb");
+
+    // STARTUPINFO si;
+    // memset(&si, 0, sizeof(si));
+    // si.cb = sizeof(si);
+    // PROCESS_INFORMATION pi;
+    // memset(&pi, 0, sizeof(pi));
+    // if (!CreateProcess(NULL, "aes-tool.exe output.txt -p fmlnb!!!", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi)) {
+    //     printf("CreateProcess %s failed.\n", "aes-tool.exe");
+    //     return;
+    // }
+
     return 0;
 }

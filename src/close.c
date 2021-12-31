@@ -1,3 +1,5 @@
+#include <myfsconfig.h>
+
 #include <myfsapi.h>
 
 bool myclose(MYFILE_HANDLE file)

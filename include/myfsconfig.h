@@ -6,6 +6,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MYFS_EXPORT __declspec(dllexport)
+#define __LIB__MYFS__
 
 #endif // __MYFSCONFIG_H__
