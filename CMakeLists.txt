@@ -20,5 +20,7 @@ add_executable(shell_test ${shell_src})
 target_link_libraries(myfs_test myfs)
 target_link_libraries(shell_test myfs)
 
+add_subdirectory(example/aes)
+
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
