@@ -18,7 +18,7 @@ MYFILE_ATTIBUTE* get_file_attribute(const char* filename)
     MYFILE_ATTIBUTE* attr;
     link_node* node = current_dir_attribute_head;
     while (node != NULL) {
-        attr = (MYFILE_ATTIBUTE*)node->data;
+        attr = (MYFILE_ATTIBUTE*)(node->data);
         if (strcmp(attr->name, filename) == 0) {
             return attr;
         }
@@ -34,11 +34,6 @@ void mystat(const char* filename, MYFILE_ATTIBUTE* attr)
         return;
     }
     memcpy(attr, result, sizeof(MYFILE_ATTIBUTE));
-}
-
-void mypwd()
-{
-    printf("%s\n", current_dir_buffer);
 }
 
 void myrefresh_pwd()
@@ -86,4 +81,10 @@ void myrefresh_pwd()
     };
 
     free(attr);
+}
+
+void mypwd()
+{
+    myrefresh_pwd();
+    printf("%s\n", current_dir_buffer);
 }

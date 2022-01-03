@@ -13,7 +13,7 @@ MYFILE_HANDLE myopen(const char* filename, char* mode)
     DWORD dwCreationDisposition;
 
     MYFILE_ATTIBUTE attr;
-    bool file_exist;
+    bool file_exist = false;
 
     memset(&attr, 0, sizeof(attr));
     mystat(filename, &attr);
@@ -75,12 +75,6 @@ MYFILE_HANDLE myopen(const char* filename, char* mode)
     MYFILE_HANDLE file = (MYFILE_HANDLE)malloc(sizeof(MYFILE));
     file->hFile = hFile;
 
-    // if (strcmp(mode, "r") == 0) {
-    //     file->mode = O_RDONLY;
-    // }
-    // else if (strcmp(mode, "w") == 0) {
-    //     file->mode = O_WRONLY;
-    // }
 
     return file;
 }
