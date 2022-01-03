@@ -15,8 +15,6 @@ MYFS_EXPORT void myexec(const MYFILE_ATTIBUTE* file, const* command)
             sprintf(cmd, "%s", file->name);
         }
 
-        puts(cmd);
-
         STARTUPINFO si;
         memset(&si, 0, sizeof(si));
         si.cb = sizeof(si);
