@@ -97,8 +97,6 @@ int main(int argc, char const* argv[])
 
     size_t length = stream.tellp();
 
-    printf("length: %llu\n", length);
-
     memset(buf, 0, sizeof(buf));
     do {
         stream.read(buf, 1024);
