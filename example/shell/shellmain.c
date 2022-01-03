@@ -82,10 +82,13 @@ int main(int argc, char const* argv[])
         } else {
             int pos = get_pos_of_first_space(cmd);
             strncpy(filename_buffer, cmd, pos);
-            puts(filename_buffer);
             MYFILE_ATTIBUTE attr;
             memset(&attr, 0, sizeof(attr));
             mystat(filename_buffer, &attr);
+            if (strlen(attr.name) == 0 || attr.is_dir) {
+                printf("error: no such file named %s\n", filename_buffer);
+                continue;
+            }
             myexec(&attr, cmd + get_pos_of_first_last_space(cmd));
         }
     }
