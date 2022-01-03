@@ -37,7 +37,7 @@ int main(int argc, char const* argv[])
 {
     uid = 0;
     gid = 0;
-    mypwd();
+    mychdir(".");
     char key_default[] = "12345678";
     char* key = key_default;
     bool is_decryption = false;

@@ -40,7 +40,7 @@ int main(int argc, char const* argv[])
 {
     uid = 0;
     gid = 0;
-    mypwd();
+    mychdir(".");
     // freopen("input.txt", "r", stdin);
     char command_buffer[1024], filename_buffer[1024];
     memset(command_buffer, 0, sizeof(command_buffer));
