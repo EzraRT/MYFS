@@ -8,5 +8,7 @@ bool myclose(MYFILE_HANDLE file)
 
     free(file);
 
+    myrefresh_pwd();
+
     return true;
 }

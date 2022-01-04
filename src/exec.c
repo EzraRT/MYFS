@@ -30,4 +30,5 @@ MYFS_EXPORT void myexec(const MYFILE_ATTIBUTE* file, const* command)
         printf("error: no privillege to exec %s\n", file->name);
         return;
     }
+    myrefresh_pwd();
 }

@@ -75,6 +75,7 @@ MYFILE_HANDLE myopen(const char* filename, char* mode)
     MYFILE_HANDLE file = (MYFILE_HANDLE)malloc(sizeof(MYFILE));
     file->hFile = hFile;
 
+    myrefresh_pwd();
 
     return file;
 }

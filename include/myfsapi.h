@@ -74,14 +74,18 @@ void MYFS_EXPORT mychdir(const char* path);
 void MYFS_EXPORT mystat(const char* path, MYFILE_ATTIBUTE* attr);
 
 /**
- * @brief 
+ * @brief make a directory
  * 
  * @param pathname 
  * @return bool - whether mkdir success
  */
 bool MYFS_EXPORT mymkdir(const char* pathname);
 
-void MYFS_EXPORT mypwd();
+/**
+ * @brief refresh the current directory information
+ * 
+ */
+void MYFS_EXPORT myrefresh_pwd();
 
 /**
  * @brief get the privilege of the current user to the specified file

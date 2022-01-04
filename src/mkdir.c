@@ -27,5 +27,7 @@ bool MYFS_EXPORT mymkdir(const char* pathname)
         mychdir("..");
     }
 
+    myrefresh_pwd();
+
     return result;
 }

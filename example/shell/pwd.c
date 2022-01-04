@@ -5,5 +5,6 @@
 
 void shell_pwd()
 {
-    mypwd();
+    myrefresh_pwd();
+    printf("%s\n", current_dir_buffer);
 }
