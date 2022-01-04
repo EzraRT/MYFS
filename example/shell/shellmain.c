@@ -77,6 +77,16 @@ int main(int argc, char const* argv[])
             size_t pos = get_pos_of_first_last_space(cmd);
             const char* pathname = cmd + pos;
             mymkdir(pathname);
+        } else if (strncmp(cmd, "rm ", 3) == 0) {
+            if (strncmp(cmd, "rm -r ", 6) == 0) {
+                size_t pos = get_pos_of_first_last_space(cmd + 5);
+                const char* pathname = cmd + 5 + pos;
+                myrmdir(pathname);
+            } else {
+                size_t pos = get_pos_of_first_last_space(cmd);
+                const char* filename = cmd + pos;
+                myremove(filename);
+            }
         } else if (strlen(cmd) == 0) {
             continue;
         } else {
