@@ -82,6 +82,22 @@ void MYFS_EXPORT mystat(const char* path, MYFILE_ATTIBUTE* attr);
 bool MYFS_EXPORT mymkdir(const char* pathname);
 
 /**
+ * @brief delete a folder
+ * 
+ * @param pathname 
+ * @return bool - whether rmdir success
+ */
+bool MYFS_EXPORT myrmdir(const char* pathname);
+
+/**
+ * @brief remove a file
+ * 
+ * @param filename 
+ * @return bool - whether remove success
+ */
+bool MYFS_EXPORT myremove(const char* filename);
+
+/**
  * @brief refresh the current directory information
  * 
  */
