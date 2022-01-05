@@ -2,12 +2,12 @@
 
 #include <myfsapi.h>
 
-MYFILE_ATTIBUTE* get_file_attribute(const char* filename)
+MYFILE_ATTRIBUTE* get_file_attribute(const char* filename)
 {
-    MYFILE_ATTIBUTE* attr;
+    MYFILE_ATTRIBUTE* attr;
     link_node* node = current_dir_attribute_head;
     while (node != NULL) {
-        attr = (MYFILE_ATTIBUTE*)(node->data);
+        attr = (MYFILE_ATTRIBUTE*)(node->data);
         if (strcmp(attr->name, filename) == 0) {
             return attr;
         }
@@ -16,11 +16,11 @@ MYFILE_ATTIBUTE* get_file_attribute(const char* filename)
     return NULL;
 }
 
-void mystat(const char* filename, MYFILE_ATTIBUTE* attr)
+void mystat(const char* filename, MYFILE_ATTRIBUTE* attr)
 {
-    MYFILE_ATTIBUTE* result = get_file_attribute(filename);
+    MYFILE_ATTRIBUTE* result = get_file_attribute(filename);
     if (result == NULL) {
         return;
     }
-    memcpy(attr, result, sizeof(MYFILE_ATTIBUTE));
+    memcpy(attr, result, sizeof(MYFILE_ATTRIBUTE));
 }

@@ -8,7 +8,7 @@ void shell_ls()
     mychdir(".");
     link_node* node = current_dir_attribute_head;
     while (node) {
-        MYFILE_ATTIBUTE* attr = (MYFILE_ATTIBUTE*)node->data;
+        MYFILE_ATTRIBUTE* attr = (MYFILE_ATTRIBUTE*)node->data;
         printf("%s  ", attr->name);
         node = node->next;
     }
@@ -23,10 +23,10 @@ void shell_ll(const char* path)
 
     link_node* node = current_dir_attribute_head;
 
-    MYFILE_ATTIBUTE* attr;
+    MYFILE_ATTRIBUTE* attr;
 
     while (node) {
-        attr = (MYFILE_ATTIBUTE*)(node->data);
+        attr = (MYFILE_ATTRIBUTE*)(node->data);
         if (attr->size > max_size) {
             max_size = attr->size;
         }
@@ -53,7 +53,7 @@ void shell_ll(const char* path)
     sprintf(format + strlen(format), "llu  %s %s", "%s", "%s");
 
     while (node) {
-        MYFILE_ATTIBUTE* attr = (MYFILE_ATTIBUTE*)(node->data);
+        MYFILE_ATTRIBUTE* attr = (MYFILE_ATTRIBUTE*)(node->data);
         line[0] = attr->is_dir ? 'd' : '-';
         line[1] = attr->owner & MYFS_FREAD ? 'r' : '-';
         line[2] = attr->owner & MYFS_FWRITE ? 'w' : '-';

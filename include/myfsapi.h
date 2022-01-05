@@ -56,7 +56,7 @@ size_t MYFS_EXPORT mywrite(MYFILE_HANDLE file, void* buffer, size_t size, size_t
  * @param file the ATTIBUTE of the file, you should at least have EXEC priviledge of this file
  * @param command command to pass to the file, could be NULL
  */
-void MYFS_EXPORT myexec(const MYFILE_ATTIBUTE* file, const char* command);
+void MYFS_EXPORT myexec(const MYFILE_ATTRIBUTE* file, const char* command);
 
 /**
  * @brief change the current directory to the specified directory
@@ -71,7 +71,7 @@ void MYFS_EXPORT mychdir(const char* path);
  * @param path filename
  * @param attr where to store the attribute
  */
-void MYFS_EXPORT mystat(const char* path, MYFILE_ATTIBUTE* attr);
+void MYFS_EXPORT mystat(const char* path, MYFILE_ATTRIBUTE* attr);
 
 /**
  * @brief make a directory
@@ -109,7 +109,7 @@ void MYFS_EXPORT myrefresh_pwd();
  * @param file the file to check
  * @return uint8_t - the privilege of the current user
  */
-uint8_t MYFS_EXPORT grant_privilege(const MYFILE_ATTIBUTE* file);
+uint8_t MYFS_EXPORT grant_privilege(const MYFILE_ATTRIBUTE* file);
 
 #ifdef __cplusplus
 }

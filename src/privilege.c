@@ -4,7 +4,7 @@
 
 size_t uid, gid;
 
-MYFS_EXPORT uint8_t grant_privilege(const MYFILE_ATTIBUTE* file)
+MYFS_EXPORT uint8_t grant_privilege(const MYFILE_ATTRIBUTE* file)
 {
     if (file->uid == uid) {
         return file->owner;

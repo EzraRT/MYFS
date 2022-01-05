@@ -16,8 +16,8 @@ link_node* current_dir_attribute_head = NULL;
 void myrefresh_pwd()
 {
     int privilege;
-    MYFILE_ATTIBUTE* attr = (MYFILE_ATTIBUTE*)malloc(sizeof(MYFILE_ATTIBUTE));
-    memset(attr, 0, sizeof(MYFILE_ATTIBUTE));
+    MYFILE_ATTRIBUTE* attr = (MYFILE_ATTRIBUTE*)malloc(sizeof(MYFILE_ATTRIBUTE));
+    memset(attr, 0, sizeof(MYFILE_ATTRIBUTE));
 
     GetCurrentDirectory(1024, current_dir_buffer);
     while (current_dir_attribute_head != NULL) {
@@ -53,8 +53,8 @@ void myrefresh_pwd()
 
         current_dir_attribute_head = push_data(current_dir_attribute_head, attr);
 
-        attr = (MYFILE_ATTIBUTE*)malloc(sizeof(MYFILE_ATTIBUTE));
-        memset(attr, 0, sizeof(MYFILE_ATTIBUTE));
+        attr = (MYFILE_ATTRIBUTE*)malloc(sizeof(MYFILE_ATTRIBUTE));
+        memset(attr, 0, sizeof(MYFILE_ATTRIBUTE));
     };
 
     free(attr);

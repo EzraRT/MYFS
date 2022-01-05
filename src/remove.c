@@ -8,11 +8,11 @@
 
 bool myremove(const char* filename)
 {
-    MYFILE_ATTIBUTE* attr;
+    MYFILE_ATTRIBUTE* attr;
     bool file_exist = false;
     link_node* node = current_dir_attribute_head;
     while (node != NULL) {
-        attr = (MYFILE_ATTIBUTE*)(node->data);
+        attr = (MYFILE_ATTRIBUTE*)(node->data);
         if (strcmp(attr->name, filename) == 0) {
             file_exist = true;
             break;

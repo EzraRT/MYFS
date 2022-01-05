@@ -5,7 +5,7 @@
 bool MYFS_EXPORT mymkdir(const char* pathname)
 {
     bool result = false;
-    MYFILE_ATTIBUTE attr;
+    MYFILE_ATTRIBUTE attr;
 
     memset(&attr, 0, sizeof(attr));
     mystat(pathname, &attr);

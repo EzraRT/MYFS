@@ -12,7 +12,7 @@ MYFILE_HANDLE myopen(const char* filename, char* mode)
     DWORD dwShareMode;
     DWORD dwCreationDisposition;
 
-    MYFILE_ATTIBUTE attr;
+    MYFILE_ATTRIBUTE attr;
     bool file_exist = false;
 
     memset(&attr, 0, sizeof(attr));

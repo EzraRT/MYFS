@@ -92,7 +92,7 @@ int main(int argc, char const* argv[])
         } else {
             int pos = get_pos_of_first_space(cmd);
             strncpy(filename_buffer, cmd, pos);
-            MYFILE_ATTIBUTE attr;
+            MYFILE_ATTRIBUTE attr;
             memset(&attr, 0, sizeof(attr));
             mystat(filename_buffer, &attr);
             if (strlen(attr.name) == 0 || attr.is_dir) {

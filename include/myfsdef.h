@@ -32,7 +32,7 @@ typedef struct {
     bool is_dir;
     SYSTEMTIME last_write;
     uint8_t owner, group, other;
-} MYFILE_ATTIBUTE;
+} MYFILE_ATTRIBUTE;
 
 typedef struct _link_node {
     void* data;

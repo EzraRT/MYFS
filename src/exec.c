@@ -2,7 +2,7 @@
 
 #include <myfsapi.h>
 
-MYFS_EXPORT void myexec(const MYFILE_ATTIBUTE* file, const* command)
+MYFS_EXPORT void myexec(const MYFILE_ATTRIBUTE* file, const* command)
 {
     uint8_t privillege = grant_privilege(file);
     if (privillege & MYFS_FEXEC) {
