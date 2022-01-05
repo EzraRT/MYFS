@@ -35,7 +35,8 @@ bool MYFS_EXPORT myclose(MYFILE_HANDLE file);
  * 
  * @param file the file handle
  * @param buffer the buffer to store the data
- * @param size size of data to read
+ * @param size size of per data
+ * @param count size of data to read
  * @return size_t - the number of bytes read
  */
 size_t MYFS_EXPORT myread(MYFILE_HANDLE file, void* buffer, size_t size, size_t count);
@@ -45,7 +46,8 @@ size_t MYFS_EXPORT myread(MYFILE_HANDLE file, void* buffer, size_t size, size_t 
  * 
  * @param file the file handle
  * @param buffer the buffer which store the data
- * @param size size of data to write
+ * @param size size of per data
+ * @param count size of data to write
  * @return size_t - the number of bytes written
  */
 size_t MYFS_EXPORT mywrite(MYFILE_HANDLE file, void* buffer, size_t size, size_t count);
