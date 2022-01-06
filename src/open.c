@@ -5,8 +5,6 @@
 
 MYFILE_HANDLE myopen(const char* filename, char* mode)
 {
-    // TODO: implement permission check
-
     HANDLE hFile;
     DWORD dwDesiredAccess;
     DWORD dwShareMode;
